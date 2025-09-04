@@ -220,6 +220,30 @@
   
 }
 
+/* Desktop/tablet: keep in one line */
+.navbar .navbar-brand h1 .excellent-care,
+.navbar .navbar-brand h1 .medical-center {
+  display: inline;
+  white-space: normal;
+}
+
+/* Mobile: stack them on two lines */
+@media (max-width: 575.98px) {           /* Bootstrap “xs” breakpoint */
+  .navbar .navbar-brand h1 {
+    display: block;
+    line-height: 1.1;
+  }
+  .navbar .navbar-brand h1 .excellent-care,
+  .navbar .navbar-brand h1 .medical-center {
+    display: block;                       /* forces line break */
+  }
+  .navbar .navbar-brand .logo-small {
+    width: 56px;                          /* optional: shrink logo a bit */
+  }
+  .navbar .navbar-brand h1 { font-size: 1.35rem; }  /* optional: prevent overflow */
+}
+
+
 
 .team-carousel .owl-nav .owl-prev,
 .team-carousel .owl-nav .owl-next {
