@@ -214,6 +214,12 @@
   color: #2A9CA7;   /* Teal blue from your poster */
 }
 
+.display-4,
+.display-4 .medical-center {
+  font-family: "Helvetica Neue", "Arial Rounded MT", Arial, sans-serif !important;
+  
+}
+
 
 .team-carousel .owl-nav .owl-prev,
 .team-carousel .owl-nav .owl-next {
