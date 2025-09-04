@@ -227,22 +227,75 @@
   white-space: normal;
 }
 
-/* Mobile: stack them on two lines */
-@media (max-width: 575.98px) {           /* Bootstrap “xs” breakpoint */
-  .navbar .navbar-brand h1 {
-    display: block;
-    line-height: 1.1;
-  }
-  .navbar .navbar-brand h1 .excellent-care,
-  .navbar .navbar-brand h1 .medical-center {
-    display: block;                       /* forces line break */
-  }
-  .navbar .navbar-brand .logo-small {
-    width: 56px;                          /* optional: shrink logo a bit */
-  }
-  .navbar .navbar-brand h1 { font-size: 1.35rem; }  /* optional: prevent overflow */
-}
+/* Mobile: logo left, two lines stacked to the right */
+/* @media (max-width: 575.98px) { */
+  /* .navbar .navbar-brand h1.brand { */
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 10px;           /* space between logo and text */ */
+    /* margin: 0; */
+    /* line-height: 1.1; */
+  /* } */
+  /* .navbar .navbar-brand .brand-lines { */
+    /* display: flex; */
+    /* flex-direction: column; */
+  /* } */
+  /* .navbar .navbar-brand .logo-small { */
+    /* width: 40px;         /* tweak as you like */ */
+    /* height: auto; */
+  /* } */
+  /* .navbar .navbar-brand .brand-lines .excellent-care { */
+    /* font-size: 20px;     /* readable on mobile */ */
+  /* } */
+  /* .navbar .navbar-brand .brand-lines .medical-center { */
+    /* font-size: 18px; */
+    /* margin-top: 2px; */
+  /* } */
+/* } */
 
+/* MOBILE */
+@media (max-width: 575.98px) {
+  /* Make the brand a row: logo | text */
+  .navbar .navbar-brand .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    line-height: 1.1;
+
+    /* Let the brand occupy space and NOT wrap under the toggler */
+    flex: 1 1 auto;
+    max-width: calc(100% - 64px); /* 64px leaves room for the hamburger */
+    min-width: 0;                  /* prevent flex min-content overflow */
+  }
+
+  /* Keep toggler at far right */
+  .navbar .navbar-toggler { margin-left: auto; }
+
+  .navbar .navbar-brand .logo-small {
+    width: 36px;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  /* Stack the two lines */
+  .navbar .navbar-brand .brand-lines {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;        /* allows text to shrink rather than wrap weirdly */
+  }
+
+  /* First line MUST stay on one line */
+  .navbar .navbar-brand .excellent-care {
+    white-space: nowrap;               /* belt */
+    font-size: clamp(16px, 4.8vw, 18px); /* auto-scale on very small screens */
+  }
+
+  .navbar .navbar-brand .medical-center {
+    margin-top: 2px;
+    font-size: clamp(14px, 4.2vw, 16px);
+  }
+}
 
 
 .team-carousel .owl-nav .owl-prev,
