@@ -196,6 +196,11 @@
     justify-content: space-between;
 }
 
+.logo-small {
+  width: 80px;   /* adjust as needed */
+  height: auto;  /* keeps the aspect ratio */
+}
+
 .excellent-care {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
