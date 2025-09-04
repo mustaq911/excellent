@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #13C5DD;
+    /*--primary: #13C5DD;*/
+	--primary: #97C93C;
     --secondary: #354F8E;
     --light: #EFF5F9;
     --dark: #1D2A4D;
